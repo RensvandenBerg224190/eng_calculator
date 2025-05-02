@@ -25,8 +25,8 @@ def get_video_data(video_url, video_id):
     url = "https://tiktok-scraper2.p.rapidapi.com/video/info_v2"
     querystring = {"video_url": video_url, "video_id": video_id}
     headers = {
-        "x-rapidapi-key": "2ddac25787msh88fa101b3b8f999p1663efjsn644bd80c24c9",
-        "x-rapidapi-host": "tiktok-scraper2.p.rapidapi.com"
+        "x-rapidapi-key": st.secrets["rapidapi"]["key"],
+        "x-rapidapi-host": st.secrets["rapidapi"]["host"]
     }
     try:
         response = requests.get(url, headers=headers, params=querystring, timeout=10)
